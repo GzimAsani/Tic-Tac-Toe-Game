@@ -22,6 +22,10 @@ gets
 
 class TicTacToe
   attr_accessor :board
+
+  def initialize
+    @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+  end
 end
 # puts "\nPlayer 1:"
 # Player1 = gets.chomp
