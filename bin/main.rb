@@ -38,15 +38,12 @@ class TicTacToe
     @players.sample
   end
 
-  def input_to_index(user_input)
-    user_input.to_i - 1
+  def user_input
+    puts 'Choose a valid number from 1-9'
+    gets.strip
+  end
+
+  def cell_position(user_input)
+    @board[user_input.to_i - 1]
   end
 end
-# game_piece = 'X'
-
-# loop do
-#   puts display_board(board)
-#   square_number = gets.chomp.to_i
-#   board[square_number - 1] = game_piece
-#   game_piece = game_piece == 'X' ? 'O' : 'X'
-# end
