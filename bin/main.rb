@@ -4,7 +4,7 @@
 # The Game Loop.
 #
 # 1. Display the board.
-# 2. Prompt a player for token ('X' or 'O').
+# 2. Randomly pick give token ('X' or 'O') to any player.
 # 3. Determine which player to start the game and turn it is.
 # 4. Prompt player to select a valid number for a cell position (1 - 9).
 # 5. if valid, update the board and switch turns
@@ -36,6 +36,10 @@ class TicTacToe
 
   def select_player
     @players.sample
+  end
+
+  def input_to_index(user_input)
+    user_input.to_i - 1
   end
 end
 # game_piece = 'X'
