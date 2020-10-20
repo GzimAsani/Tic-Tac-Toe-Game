@@ -8,7 +8,7 @@
 #
 # 1. Display the board.
 # 2. Assign Tokens 'X' or 'O' to each player.
-# 3. Assign Tokens 'X' or 'O' to each player.which player turn it is
+# 3. Determine which player turn it is
 # 4. Prompt player to select a valid number for a cell position (1 - 9).
 # 5. if valid, update the board and switch turns
 # 6. else prompt player to type-in a valid number.
