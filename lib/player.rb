@@ -1,17 +1,18 @@
 class Player
-    attr_reader :name, :symbol
-    attr_accessor :current
+  attr_reader :name, :symbol
+  attr_accessor :current
 
+  def initialize(name, symbol)
+    @name = name
+    @symbol = symbol
+    @current = nil
+  end
 
-    def initialize(name, symbol)
-        @name = name
-        @symbol = symbol
-        @current = nil
+  def who_is_first
+    if @current == true
+      puts "#{self.name} starts first"
+    else
+      puts 'Invalid Name'
     end
-
-    def who_is_first
-        if @current == true
-            puts "#{self.name} starts first"
-        end
-    end
+  end
 end

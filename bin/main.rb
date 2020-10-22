@@ -4,7 +4,7 @@ require_relative '../lib/begin'
 
 class Board
   attr_accessor :inputs
-    @inputs = []
+  @inputs = []
 
   def initialize
     @inputs = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
@@ -98,10 +98,10 @@ class GamePlay
     puts 'Lets play Tic Tac Toe!!!!'
     puts 'Player 1, can you tell us your name?'
     $player1 = Player.new(gets.chomp, 'X')
-    puts = "Greetings, #{$player1.name} you start with the '#{$player1.symbol}'symbol", ""
+    puts = "Greetings, #{$player1.name} you start with the '#{$player1.symbol}'symbol", ''
     puts 'Player 2, can you also tell us your name?'
-    $player2 = Player.new(gets.chomp, "O")
-    puts = "Greetings, #{$player2.name} you start with the '#{$player2.symbol}'symbol", ""
+    $player2 = Player.new(gets.chomp, 'O')
+    puts = "Greetings, #{$player2.name} you start with the '#{$player2.symbol}'symbol", ''
     puts 'In order to see who goes first we\'ll be fair and flip the coin'
     puts "#{$player1.name} you are HEADS and. #{$player2.name} you are TAILS"
     puts 'Press enter to flip the coin'
@@ -115,6 +115,7 @@ class GamePlay
     $player2.who_is_first
     gets
   end
+
   def lets_play
     i = 0
     while i < 9 do
@@ -136,10 +137,10 @@ class GamePlay
        $player1.current = !$player1.current
         $player2.current = !$player2.current
         break if self.if_game_over == 0
-        i += 1
+         i += 1
     end
-      board_game.board_display
-      puts "It is a darn draw!" if i == 9
+        board_game.board_display
+        puts 'It is a darn draw!' if i == 9
   end
 
   def check_current_player
@@ -149,7 +150,7 @@ class GamePlay
       $current_player = $player2
     end
   end
-
+  # rubocop:disable Metrics/CyclomaticComplexity
   def if_game_over
     if (board_game.inputs[0].uniq.count == 1) && (board_game.inputs[0][0] != ' ')
       board_game.board_display
@@ -176,18 +177,16 @@ class GamePlay
       board_game.board_display
       game_finished
     end
-
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
 
   def game_finished
     puts "We have a winner! #{$current_player.name} wins the game!"
-    puts "Thank you for playing"
+    puts 'Thank you for playing'
     gets
     0
   end
-
 end
-
 play = GamePlay.new
 play.game_play
 play.lets_play
