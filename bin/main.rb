@@ -19,40 +19,30 @@ puts 'WELCOME TO THIS TIC-TAC-TOE GAME: created by: '
 puts "Press 'ENTER' to begin"
 gets
 
-class TicTacToe
-  attr_accessor :board, :players
-
+class Board
+  attr_accessor :inputs
+  @inputs = []
+  
   def initialize
-    @board = Array.new(9, ' ')
-    @players = { Player1: 'X', Player2: 'O' }
+  @inputs = [[" "," "," "],[" "," "," "],[" "," "," "]]
   end
-
-  def display_board
-    puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
-    puts ' ----------- '
-    puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
-    puts ' ----------- '
-    puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
-  end
-
-  def select_player
-    @players.sample
-  end
-
-  def user_input
-    puts 'Choose a valid number from 1-9'
-    gets.strip
-  end
-
-  def cell_position(user_input)
-    @board[user_input.to_i - 1]
-  end
-
-  def position_taken?(user_input)
-    @board[user_input] == 'X' || @board[user_input] == 'O'
-  end
-
-  def valid_move?(user_input)
-    user_input.between?(1, 9) && !position_taken?(user_input)
+  
+  def board_display
+  system "clear"
+  
+  puts ""
+  puts " |‾‾‾‾‾|‾‾‾‾‾|‾‾‾‾‾|"
+  puts " | #{@inputs[0][0]} | #{@inputs[0][1]} | #{@inputs[0][2]} |"
+  puts " |7____|8____|9____|"
+  puts " | | | |"
+  puts " | #{@inputs[1][0]} | #{@inputs[1][1]} | #{@inputs[1][2]} |"
+  puts " |4____|5____|6____|"
+  puts " | | | |"
+  puts " | #{@inputs[2][0]} | #{@inputs[2][1]} | #{@inputs[2][2]} |"
+  puts " |1____|2____|3____|"
+  puts ""
+  
   end
 end
+
+  
