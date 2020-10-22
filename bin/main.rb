@@ -1,91 +1,86 @@
-
 #!/usr/bin/env ruby
 require_relative '../lib/player'
 require_relative '../lib/begin'
 
-
-
-
 class Board
   attr_accessor :inputs
-  @inputs = []
-  
+    @inputs = []
+
   def initialize
-  @inputs = [[" "," "," "],[" "," "," "],[" "," "," "]]
+    @inputs = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
   end
-  
+
   def board_display
-  system "clear"
-  
-  puts ""
-  puts "  |‾‾‾‾‾|‾‾‾‾‾|‾‾‾‾‾|"
-  puts "  |  #{@inputs[0][0]}  |  #{@inputs[0][1]}  |  #{@inputs[0][2]}  |"
-  puts "  |7____|8____|9____|"
-  puts "  |     |     |     |"
-  puts "  |  #{@inputs[1][0]}  |  #{@inputs[1][1]}  |  #{@inputs[1][2]}  |"
-  puts "  |4____|5____|6____|"
-  puts "  |     |     |     |"
-  puts "  |  #{@inputs[2][0]}  |  #{@inputs[2][1]}  |  #{@inputs[2][2]}  |"
-  puts "  |1____|2____|3____|"
-  puts ""
-  
+    system 'clear'
+
+    puts ''
+    puts '  |‾‾‾‾‾|‾‾‾‾‾|‾‾‾‾‾|'
+    puts "  |  #{@inputs[0][0]}  |  #{@inputs[0][1]}  |  #{@inputs[0][2]}  |"
+    puts '  |7____|8____|9____|'
+    puts '  |     |     |     |'
+    puts "  |  #{@inputs[1][0]}  |  #{@inputs[1][1]}  |  #{@inputs[1][2]}  |"
+    puts '  |4____|5____|6____|'
+    puts '  |     |     |     |'
+    puts "  |  #{@inputs[2][0]}  |  #{@inputs[2][1]}  |  #{@inputs[2][2]}  |"
+    puts '  |1____|2____|3____|'
+    puts ''
   end
-  
+
   def pick_cell
     case $chosen_cell
     when 1
-      if @inputs[2][0] == " " 
-        @inputs[2][0] = "#{$current_player.symbol}"
+      if @inputs[2][0] == ' '
+        @inputs[2][0] = "#{$current_player.symbol}.to_s"
       else
-        return 0
+        0
       end
     when 2
-      if @inputs[2][1] == " " 
-        @inputs[2][1] = "#{$current_player.symbol}"
+      if @inputs[2][1] == ' '
+        @inputs[2][1] = "#{$current_player.symbol}.to_s"
       else
-        return 0
+        0
       end
     when 3
-      if @inputs[2][2] == " " 
-        @inputs[2][2] = "#{$current_player.symbol}"
+      if @inputs[2][2] == ' '
+        @inputs[2][2] = "#{$current_player.symbol}.to_s"
       else
-        return 0
+        0
       end
     when 4
-      if @inputs[1][0] == " " 
-        @inputs[1][0] = "#{$current_player.symbol}"
+      if @inputs[1][0] == ' '
+        @inputs[1][0] = "#{$current_player.symbol}.to_s"
       else
-        return 0
+        0
       end
     when 5
-      if @inputs[1][1] == " " 
-        @inputs[1][1] = "#{$current_player.symbol}"
+      if @inputs[1][1] == ' '
+        @inputs[1][1] = "#{$current_player.symbol}.to_s"
       else
-        return 0
-      end  
+        0
+      end
     when 6
-      if @inputs[1][2] == " " 
-        @inputs[1][2] = "#{$current_player.symbol}"
+      if @inputs[1][2] == ' '
+        @inputs[1][2] = "#{$current_player.symbol}.to_s"
       else
-        return 0
+        0
       end
     when 7
-      if @inputs[0][0] == " " 
-        @inputs[0][0] = "#{$current_player.symbol}"
+      if @inputs[0][0] == ' '
+        @inputs[0][0] = "#{$current_player.symbol}.to_s"
       else
-        return 0
+        0
       end
     when 8
-      if @inputs[0][1] == " " 
-        @inputs[0][1] = "#{$current_player.symbol}"
+      if @inputs[0][1] == ' '
+        @inputs[0][1] = "#{$current_player.symbol}.to_s"
       else
-        return 0
+        0
       end
     when 9
-      if @inputs[0][2] == " " 
-        @inputs[0][2] = "#{$current_player.symbol}"
+      if @inputs[0][2] == ' '
+        @inputs[0][2] = "#{$current_player.symbol}.to_s"
       else
-        return 0
+        0
       end
     end
   end
@@ -99,21 +94,21 @@ class GamePlay
   end
 
   def game_play
-    system "clear"
-    puts "Lets play Tic Tac Toe!!!!"
-    puts "Player 1, can you tell us your name?"
-    $player1 = Player.new(gets.chomp, "X")
+    system 'clear'
+    puts 'Lets play Tic Tac Toe!!!!'
+    puts 'Player 1, can you tell us your name?'
+    $player1 = Player.new(gets.chomp, 'X')
     puts = "Greetings, #{$player1.name} you start with the '#{$player1.symbol}'symbol", ""
-    puts "Player 2, can you also tell us your name?"
+    puts 'Player 2, can you also tell us your name?'
     $player2 = Player.new(gets.chomp, "O")
     puts = "Greetings, #{$player2.name} you start with the '#{$player2.symbol}'symbol", ""
-    puts "In order to see who goes first we'll be fair and flip the coin"
+    puts 'In order to see who goes first we\'ll be fair and flip the coin'
     puts "#{$player1.name} you are HEADS and. #{$player2.name} you are TAILS"
-    puts "Press enter to flip the coin"
+    puts 'Press enter to flip the coin'
     gets
-    puts "Flipped", ""
+    puts 'Flipped', ''
     sleep(2.0)
-    coin = Begin.new 
+    coin = Begin.new
     $player1.current = coin.flip_the_coin
     $player2.current = !$player1.current
     $player1.who_is_first
@@ -127,13 +122,13 @@ class GamePlay
       check_current_player
       puts "#{$current_player.name} it is your turn. Pick a number!"
       $chosen_cell = gets.chomp.to_i
-       unless (1..9).include?($chosen_cell) 
-        puts "Please choose an open cell starting from number 1 through 9"
+       unless (1..9).include?($chosen_cell)
+        puts 'Please choose an open cell starting from number 1 through 9'
         sleep(0.5)
         redo
        end
        if board_game.pick_cell == 0
-        puts "Please pick an empty number"
+        puts 'Please pick an empty number'
         sleep(0.5)
         redo
        end
@@ -156,28 +151,28 @@ class GamePlay
   end
 
   def if_game_over
-    if (board_game.inputs[0].uniq.count == 1) && (board_game.inputs[0][0] != " ")
+    if (board_game.inputs[0].uniq.count == 1) && (board_game.inputs[0][0] != ' ')
       board_game.board_display
       game_finished
-    elsif (board_game.inputs[1].uniq.count == 1) && (board_game.inputs[1][0] != " ")
+    elsif (board_game.inputs[1].uniq.count == 1) && (board_game.inputs[1][0] != ' ')
       board_game.board_display
       game_finished
-    elsif (board_game.inputs[2].uniq.count == 1) && (board_game.inputs[2][0] != " ")
+    elsif (board_game.inputs[2].uniq.count == 1) && (board_game.inputs[2][0] != ' ')
       board_game.board_display
       game_finished
-    elsif (board_game.inputs.transpose[0].uniq.count == 1) && (board_game.inputs.transpose[0][0] != " ")
+    elsif (board_game.inputs.transpose[0].uniq.count == 1) && (board_game.inputs.transpose[0][0] != ' ')
       board_game.board_display
       game_finished
-    elsif (board_game.inputs.transpose[1].uniq.count == 1) && (board_game.inputs.transpose[1][0] != " ")
+    elsif (board_game.inputs.transpose[1].uniq.count == 1) && (board_game.inputs.transpose[1][0] != ' ')
       board_game.board_display
       game_finished
-    elsif (board_game.inputs.transpose[2].uniq.count == 1) && (board_game.inputs.transpose[2][0] != " ")
+    elsif (board_game.inputs.transpose[2].uniq.count == 1) && (board_game.inputs.transpose[2][0] != ' ')
       board_game.board_display
       game_finished
-    elsif (board_game.inputs[0][0] == board_game.inputs[1][1]) && (board_game.inputs[1][1] == board_game.inputs[2][2]) && (board_game.inputs[1][1] != " ")
+    elsif (board_game.inputs[0][0] == board_game.inputs[1][1]) && (board_game.inputs[1][1] == board_game.inputs[2][2]) && (board_game.inputs[1][1] != ' ')
       board_game.board_display
       game_finished
-    elsif (board_game.inputs[0][2] == board_game.inputs[1][1]) && (board_game.inputs[1][1] == board_game.inputs[2][0]) && (board_game.inputs[1][1] != " ")
+    elsif (board_game.inputs[0][2] == board_game.inputs[1][1]) && (board_game.inputs[1][1] == board_game.inputs[2][0]) && (board_game.inputs[1][1] != ' ')
       board_game.board_display
       game_finished
     end
@@ -188,7 +183,7 @@ class GamePlay
     puts "We have a winner! #{$current_player.name} wins the game!"
     puts "Thank you for playing"
     gets
-    return 0
+    0
   end
 
 end
