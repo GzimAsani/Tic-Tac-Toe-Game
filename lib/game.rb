@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Game
   WINNING_COMBO = [
     [1, 2, 3],
