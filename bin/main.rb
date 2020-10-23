@@ -69,4 +69,3 @@ end
 
 start_game(new_game, gameboard_inputs)
 new_game.starting
-
