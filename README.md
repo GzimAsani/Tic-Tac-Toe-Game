@@ -27,11 +27,11 @@ Ruby installed localy
 ### Install
 
 1. Clone the repo into your machine
-    $ git@github.com:GzimAsani/Tic-Tac-Toe-Game.git
+    $ https://github.com/GzimAsani/Tic-Tac-Toe-Game.git
 
-2. Navigate to the downloaded file and click bin folder than main.rb
+2. Navigate to the downloaded file and click bin folder than main.rb (./bin/main.rb) or you can do this through the terminal "cd Tic-Tac-Toe-Game"
 
-3. Type in bin/main.rb in the terminal.
+3. Type in ruby bin/main.rb in the terminal.
 
 4. After the 3 step the game will start first by asking the two players names.
 
