@@ -44,4 +44,20 @@ class Game
     end
     false
   end
+
+  def check_the_move?(position, letter)
+    case position
+    when 1..9
+      if @game_array[position - 1].is_a?(Integer)
+        @game_array[position - 1] = letter
+        true
+      else
+        puts 'Please pick an empty position!'
+        false
+      end
+    else
+      puts 'Please pick a valid position!'
+      false
+    end
+  end
 end

@@ -38,7 +38,7 @@ def moving(player_name, position1)
   loop do
     puts "Hello, #{player_name.name} it is your turn to play"
     position1 = gets.chomp.to_i
-    break if check_the_move(position1, player_name.letter)
+    break if check_the_move?(position1, player_name.letter)
   end
   player_name.array.push(position1)
 end
@@ -49,22 +49,6 @@ end
 
 def draw
   puts 'Strong challenge it is a draw!'
-end
-
-def check_the_move(position, letter)
-  case position
-  when 1..9
-    if @game_array[position - 1].is_a?(Integer)
-      @game_array[position - 1] = letter
-      true
-    else
-      puts 'Please pick an empty position!'
-      false
-    end
-  else
-    puts 'Please pick a valid position!'
-    false
-  end
 end
 
 start_game(new_game, gameboard_inputs)
