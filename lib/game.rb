@@ -23,12 +23,14 @@ class Game
       moving(@first_player, position)
       game_board(game_array)
       return winner(@first_player.name) if check_win?(WINNING_COMBO, @first_player.array)
+
       i += 1
       break if i >= 9
 
       moving(@second_player, position)
       game_board(game_array)
       return winner(@second_player.name) if check_win?(WINNING_COMBO, @second_player.array)
+
       i += 1
       break if i >= 9
 
