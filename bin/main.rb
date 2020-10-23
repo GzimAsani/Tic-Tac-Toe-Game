@@ -6,21 +6,23 @@ new_game = Game.new
 gameboard_inputs = new_game.game_array
 def start_game(play_game, array_game)
   name = ''
-  puts 'Welcome to Tic Tac Toe'
+  puts 'Welcome to Tic Tac Toe', ''
+  puts 'This game is created by Gzim Asani and Oluwaseun Iyadi', ''
+  sleep(2)
   loop do
     puts 'Player1 can you tell us your name'
     name = gets.chomp
     break if name != '' && name != ' '
   end
   play_game.first_player.name = name
-  puts "Greetings #{play_game.first_player.name}you will be playing as #{play_game.first_player.letter}"
+  puts "Greetings #{play_game.first_player.name} you will be playing as #{play_game.first_player.letter}"
   loop do
     puts 'Player2 can you tell us your name'
     name = gets.chomp
     break if name != '' && name != ' '
   end
   play_game.second_player.name = name
-  puts "Greetings #{play_game.second_player.name}you will be playing as #{play_game.second_player.letter}"
+  puts "Greetings #{play_game.second_player.name} you will be playing as #{play_game.second_player.letter}"
   puts 'Take a look at the game board!'
   game_board(array_game)
 end
@@ -28,7 +30,7 @@ end
 def game_board(gameboard_inputs)
   9.times do |items|
     print "#{gameboard_inputs[items]} | " if items % 3 != 2
-    puts "#{gameboard_inputs[items]} " if items % 3 == 2
+    puts "#{gameboard_inputs[items]} |" if items % 3 == 2
   end
 end
 
@@ -67,3 +69,12 @@ end
 
 start_game(new_game, gameboard_inputs)
 new_game.starting
+
+puts 'Do you want a rematch?'
+answer = gets.strip.downcase
+if answer == 'yes'
+  start_game(new_game, gameboard_inputs)
+  new_game.starting
+else
+  puts 'Maybe next time!'
+end
