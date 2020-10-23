@@ -70,11 +70,3 @@ end
 start_game(new_game, gameboard_inputs)
 new_game.starting
 
-puts 'Do you want a rematch?'
-answer = gets.strip.downcase
-if answer == 'yes'
-  start_game(new_game, gameboard_inputs)
-  new_game.starting
-else
-  puts 'Maybe next time!'
-end
