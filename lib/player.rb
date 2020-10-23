@@ -1,5 +1,5 @@
 class Player
-  attr_accessor :name, :letter, :array
+  attr_writer :name, :letter, :array
   def initialize(name, letter)
     @name = name
     @letter = letter
