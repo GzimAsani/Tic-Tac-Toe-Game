@@ -7,8 +7,8 @@ In this project we created an executable file on main.rb that allows the users t
 
 ## How To Play
 
-"Tic Tac Toe" is 2 player game which includes 9 squares each of them represented with a number. Each player will be represented with a symbol ("X" or "O") and their respective symbols will overwrite the square numbers. The starter of the game will be the first player.
-In case none of the players manages to put three of their symbols in a straight line or in a diagonal line the game will be end on draw.
+"Tic Tac Toe" is a 2 player game which includes 9 squares each of them represented with a number. Each player will be represented with a symbol ("X" or "O") and their respective symbols will overwrite the square numbers.The first player will start the game.
+If after 9 turns neither player manages to put their respective symbols in a straight/diagonal line the game will end as a draw
 
 ## Build with
 
@@ -32,6 +32,8 @@ Ruby installed localy
 2. Navigate to the downloaded file and click bin folder than main.rb
 
 3. Type in bin/main.rb in the terminal.
+
+4. After the 3 step the game will start first by asking the two players names.
 
 
 ## Contents
