@@ -1,47 +1,55 @@
-# Display a welcome message.
+#!/usr/bin/env ruby
+require_relative '../lib/player.rb'
+require_relative '../lib/game.rb'
 
-# Prompt the 2 players for their names
-# Assign pieces to the players like 'X' or 'O'. randomly.
-# first to play has 'X' second has 'O': Deciding who gets to start.
-#
-# The Game Loop.
-#
-# 1. Display the board.
-# 2. Assign Tokens 'X' or 'O' to each player.
-# 3. Determine which player turn it is
-# 4. Prompt player to select a valid number for a cell position (1 - 9).
-# 5. if valid, update the board and switch turns
-# 6. else prompt player to type-in a valid number.
-# 7. if draw, display a message that says selected move is a draw move
-# 8. if win, display a message that says selected move is a winning move
-# 9. Exit on win or draw or go back to  1.
-
-puts 'WELCOME TO THIS TIC-TAC-TOE GAME: created by: '
-puts "Press 'ENTER' to begin"
-gets
-
-puts "\nPlayer 1:"
-Player1 = gets.chomp
-
-puts "\nPlayer 2:"
-Player2 = gets.chomp
-
-board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-
-def display_board(board)
-  %(#{board[0]} | #{board[1]} | #{board[2]}
-----------
-#{board[3]} | #{board[4]} | #{board[5]}
-----------
-#{board[6]} | #{board[7]} | #{board[8]}
-  )
+new_game = Game.new
+gameboard_inputs = new_game.game_array
+def start_game(play_game, array_game)
+  name = ''
+  puts 'Welcome to Tic Tac Toe', ''
+  puts 'This game is created by Gzim Asani and Oluwaseun Iyadi', ''
+  sleep(2)
+  loop do
+    puts 'Player1 can you tell us your name'
+    name = gets.chomp
+    break if name != '' && name != ' '
+  end
+  play_game.first_player.name = name
+  puts "Greetings #{play_game.first_player.name} you will be playing as #{play_game.first_player.letter}"
+  loop do
+    puts 'Player2 can you tell us your name'
+    name = gets.chomp
+    break if name != '' && name != ' '
+  end
+  play_game.second_player.name = name
+  puts "Greetings #{play_game.second_player.name} you will be playing as #{play_game.second_player.letter}"
+  puts 'Take a look at the game board!'
+  game_board(array_game)
 end
 
-game_piece = 'X'
-
-loop do
-  puts display_board(board)
-  square_number = gets.chomp.to_i
-  board[square_number - 1] = game_piece
-  game_piece = game_piece == 'X' ? 'O' : 'X'
+def game_board(gameboard_inputs)
+  9.times do |items|
+    print "#{gameboard_inputs[items]} | " if items % 3 != 2
+    puts "#{gameboard_inputs[items]} |" if items % 3 == 2
+  end
 end
+
+def moving(player_name, position1)
+  loop do
+    puts "Hello, #{player_name.name} it is your turn to play"
+    position1 = gets.chomp.to_i
+    break if check_the_move?(position1, player_name.letter)
+  end
+  player_name.array.push(position1)
+end
+
+def winner(player)
+  puts "And the winner for this game is.... #{player}!"
+end
+
+def draw
+  puts 'Strong challenge it is a draw!'
+end
+
+start_game(new_game, gameboard_inputs)
+new_game.starting
