@@ -39,11 +39,17 @@ RSpec.describe Game do
       it 'should return false' do
         expect(player.check_win?(combo, first_gamer_arr)).to be(false)
       end
+      it 'Should not return true' do
+        expect(player.check_win?(combo, first_gamer_arr)).to_not be(true)
+      end
     end
 
     context 'the given array include the winning combo' do
       it 'should return true' do
         expect(player.check_win?(combo, second_gamer_arr)).to be(true)
+      end
+      it 'should not return false' do
+        expect(player.check_win?(combo, second_gamer_arr)).to_not be(false)
       end
     end
   end

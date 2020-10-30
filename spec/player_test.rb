@@ -12,5 +12,11 @@ RSpec.describe Player do
     it 'Should return an empty array' do
       expect(start.array).to eql([])
     end
+    it 'Should not return a filled array' do
+      expect(start.array).not_to eql([Integer])
+    end
+    it 'Should not be empty' do
+      expect(start.letter).not_to eql(' ')
+    end
   end
 end
