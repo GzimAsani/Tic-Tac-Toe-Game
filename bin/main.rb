@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
-require_relative '../lib/player.rb'
-require_relative '../lib/game.rb'
+require_relative '../lib/player'
+require_relative '../lib/game'
 
 new_game = Game.new
 gameboard_inputs = new_game.game_array

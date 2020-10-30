@@ -10,6 +10,7 @@ class Game
     [3, 5, 7]
   ].freeze
   attr_reader :first_player, :second_player, :game_array
+
   def initialize
     @first_player = Player.new('', 'X')
     @second_player = Player.new('', 'O')
