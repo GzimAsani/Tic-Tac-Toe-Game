@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
-require_relative '../lib/player.rb'
-require_relative '../lib/game.rb'
+require_relative '../lib/player'
+require_relative '../lib/game'
 
 new_game = Game.new
 gameboard_inputs = new_game.game_array
@@ -14,6 +14,7 @@ def start_game(play_game, array_game)
     name = gets.chomp
     break if name != '' && name != ' '
   end
+
   play_game.first_player.name = name
   puts "Greetings #{play_game.first_player.name} you will be playing as #{play_game.first_player.letter}"
   loop do
