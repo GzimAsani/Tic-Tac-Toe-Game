@@ -1,9 +1,9 @@
 class Player
-  attr_accessor :name, :letter, :array
+  attr_accessor :name, :symbol, :arr
 
-  def initialize(name, letter)
+  def initialize(name, symbol)
     @name = name
-    @letter = letter
-    @array = []
+    @letter = symbol
+    @arr = []
   end
 end
