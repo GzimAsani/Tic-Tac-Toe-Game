@@ -1,57 +1,63 @@
 # The Tic-Tac-Toe
->The purpose of this project was to demonstrate our learned skills on Ruby programming. Here we developed the Tic-Tac-Toe game.
+>The purpose of this project was to demonstrate our learned skills on writing test cases for our Ruby programming. Here we created test cases for our existig Tic-Tac-Toe game for the player and game class. All the possible scenarios where tested which all passed the test.
 
 <img src="screenshot/screen.png">
 
-In this project we created an executable file on main.rb that allows the users to play the game through terminal
+In this project we created the spec directory which houses the player_spec.rb and game_spec.rb class in their respective file that is being tested
 
-## How To Play
-
-"Tic Tac Toe" is a 2 player game which includes 9 squares each of them represented with a number. Each player will be represented with a symbol ("X" or "O") and their respective symbols will overwrite the square numbers.The first player will start the game.
-If after 9 turns neither player manages to put their respective symbols in a straight/diagonal line the game will end as a draw
 
 ## Build with
 
 - Ruby
+- RSPEC
 - VSCode
 - Rubocop
 
 ## Getting Started
 
-In order to play it locally follow the next steps
+In order to test the game locally follow the next steps
 
-### Prerequisites 
+### Prerequisites
 
-Ruby installed localy 
+To get this project up and running, you must have Ruby installed on your machine.
 
 ### Install
 
 1. Clone the repo into your machine
-    $ https://github.com/GzimAsani/Tic-Tac-Toe-Game.git
+    $ https://github.com/GzimAsani/tic_tac_toe_test.git
 
-2. Navigate to the downloaded file and click bin folder than main.rb (./bin/main.rb) or you can do this through the terminal "cd Tic-Tac-Toe-Game"
+2. Cd into Tic-Tac-Toe-Game directory
 
-3. Type in ruby bin/main.rb in the terminal.
+3. run rspec --init
 
-4. After the 3 step the game will start first by asking the two players names.
+4. Cd into the spec directory, create the game_spec.rb and player_spec.rb file. 
+
+5. Require the needed files, write your test, run rspec to check if the test passes.
+
+6. Run rubocop on your working folder and fix errors.
+
+6.  stage, commit, push to the created remote branch(tic_tac_toe_test) on github and create a pull request..
 
 
 ## Contents
-The code is divided in two main folders **./bin**  and **./lib**. 
-The main executable code **main.rb**  is in **./bin**. The other folder contents other important classes which were incorporated in the **main.rb** 
+The code is divided in two main folders **./lib**  and **./spec**.
+The main executable code **game_spec.rb and player_spec.rb**  are in **./spec**. The other folder contains other important classes which were incorporated in the **game_spec.rb and player_spec.rb**
 
 
 # Authors
 
-👤 **Gzim Asani**
+👤 **Eric Enaburekhan**
 
-- Github: [@GzimAsani](https://github.com/GzimAsani)
-- Linkedin: [GzimAsani](https://www.linkedin.com/in/gzim-asani-83390a17a/)
+- Github: [@enaburekhan](https://github.com/enaburekhan)
+- Twitter: [@enaburekhaneric](https://twitter.com/enaburekhaneric)
+- Linkedin: [@ericenaburekhan](https://www.linkedin.com/in/eric-enaburekhan-801a28100/)
 
 👤 **Iyadi Oluwaseun**
 
 - Github: [@CornerstoneII](https://github.com/CornerstoneII)
 - Linkedin: [CornerstoneII](https://www.linkedin.com/in/oluwaseun-iyadi-773584b4/)
+
+
 
 ## 🤝 Contributing
 
