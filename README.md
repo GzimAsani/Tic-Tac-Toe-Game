@@ -20,9 +20,9 @@ If after 9 turns neither player manages to put their respective symbols in a str
 
 In order to play it locally follow the next steps
 
-### Prerequisites 
+### Prerequisites
 
-Ruby installed localy 
+Ruby installed localy
 
 ### Install
 
@@ -37,21 +37,24 @@ Ruby installed localy
 
 
 ## Contents
-The code is divided in two main folders **./bin**  and **./lib**. 
-The main executable code **main.rb**  is in **./bin**. The other folder contents other important classes which were incorporated in the **main.rb** 
+The code is divided in two main folders **./bin**  and **./lib**.
+The main executable code **main.rb**  is in **./bin**. The other folder contents other important classes which were incorporated in the **main.rb**
 
 
 # Authors
 
-👤 **Gzim Asani**
+👤 **Eric Enaburekhan**
 
-- Github: [@GzimAsani](https://github.com/GzimAsani)
-- Linkedin: [GzimAsani](https://www.linkedin.com/in/gzim-asani-83390a17a/)
+- Github: [@enaburekhan](https://github.com/enaburekhan)
+- Twitter: [@enaburekhaneric](https://twitter.com/enaburekhaneric)
+- Linkedin: [@ericenaburekhan](https://www.linkedin.com/in/eric-enaburekhan-801a28100/)
 
 👤 **Iyadi Oluwaseun**
 
 - Github: [@CornerstoneII](https://github.com/CornerstoneII)
 - Linkedin: [CornerstoneII](https://www.linkedin.com/in/oluwaseun-iyadi-773584b4/)
+
+
 
 ## 🤝 Contributing
 
