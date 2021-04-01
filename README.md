@@ -1,5 +1,5 @@
 # The Tic-Tac-Toe
->The purpose of this project was to demonstrate our learned skills on writing test cases for our Ruby programming. Here we created test cases for our existig Tic-Tac-Toe game for the player and game class. All the possible scenarios where tested which all passed the test.
+>The purpose of this project was to demonstrate our learned skills on writing test cases for our Ruby programming. Here we created test cases for our existig Tic-Tac-Toe game for the player and game class. All the possible scenarios were tested which all passed the test.
 
 <img src="screenshot/screen.png">
 
